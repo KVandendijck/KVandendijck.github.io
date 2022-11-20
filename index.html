@@ -23,11 +23,9 @@
             })).json();
         }
     }">
-        <label>Enter user:</label><input type="text" x-model="user"><br>
+        <label>Enter user:</label><input type="text" x-model="user"> <button x-on:click="callmethod1">send User</button><br>
         <br><br>
         the person you searched is: <strong x-text="responsedata1.data.name"></strong>
-        <br><br>
-        <button x-on:click="callmethod1">send User</button>
         <br><br>
     </div>
     <div x-data="{
@@ -48,7 +46,21 @@
         }
     }">
         Get 5 tweets by clicking <button x-on:click="getData2">here</button>
-        <strong x-text="responsedata2"></strong>
+        
+        <table>
+                <thead>
+                    <tr>
+                        <th>Tweets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="item in responsedata2.data">
+                        <tr>
+                            <td x-text="item.text"></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
     </div>
 </body>
 </html>
