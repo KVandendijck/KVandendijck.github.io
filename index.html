@@ -28,6 +28,7 @@
         the person you searched is: <strong x-text="responsedata1.data.name"></strong>
         <br><br>
         <button x-on:click="callmethod1">send User</button>
+        <br><br>
     </div>
     <div x-data="{
         responsedata: null,
@@ -35,8 +36,9 @@
             this.responsedata = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/getNumberOfTweets')).json();
         }
     }">
-        <button x-on:click="getData">Get amount of tweets</button>
-        Data returned: <strong x-text="responsedata"></strong>
+        Get amount of tweets by clicking <button x-on:click="getData">here</button>
+        <strong x-text="responsedata"></strong>
+        
     </div>
     <br><br>
     <div x-data="{
@@ -45,8 +47,8 @@
             this.responsedata2 = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/gettweet')).json();
         }
     }">
-        <button x-on:click="getData2">Get 5 tweets</button>
-        Data returned: <strong x-text="responsedata2"></strong>
+        Get 5 tweets by clicking <button x-on:click="getData2">here</button>
+        <strong x-text="responsedata2"></strong>
     </div>
 </body>
 </html>
