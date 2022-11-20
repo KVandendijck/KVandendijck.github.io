@@ -3,6 +3,10 @@
     background-color: #F0F8FF;
 }
 
+table{
+    align-items: center;
+}
+
 th,td{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
