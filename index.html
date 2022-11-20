@@ -20,7 +20,7 @@
                     'Content-type': 'application/json; charset=UTF-8',
                 },
             })).json();
-        },
+        }console.log(responsedata)
     }">
             <label>Enter user:</label><input type="text" x-model="user"><br>
   
@@ -30,7 +30,7 @@
         responsedata: null,
         async get_NOT() {
             this.responsedata = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/getNumberOfTweets')).json();
-        }
+        } console.log(responsedata)
     }">
          <button x-on:click="get_NOT">Get Number Of Tweets</button>
            <br><br>
