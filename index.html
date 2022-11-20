@@ -6,5 +6,16 @@
 </head>
 <body>
     <h1>Kobe Vandendijck</h1>
+    <div x-data="{
+        responsedata: null,
+        async get_NOT() {
+            this.responsedata = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/getNumberOfTweets')).json();
+        }
+    }">
+         <button x-on:click="get_NOT">Get Number Of Tweets</button>
+           <br><br>
+           The number of tweets of your person is: <strong x-text="responsedata"></strong>
+
+    </div>
 </body>
 </html>
