@@ -7,10 +7,10 @@
 <body>
     <h1>Kobe Vandendijck</h1>
     <div x-data="{
-        responsedata: null,
+        responsedata1: null,
         user: null,
         async callmethod1() {
-            this.responsedata = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/user',
+            this.responsedata1 = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/user',
             {
                 method: 'POST',
                 body: JSON.stringify({
@@ -20,20 +20,22 @@
                     'Content-type': 'application/json; charset=UTF-8',
                 },
             })).json();
-        }console.log(responsedata)
+        }console.log(responsedata1)
     }">
             <label>Enter user:</label><input type="text" x-model="user"><br>
+            <br><br>
+            the person you searched is: <strong x-text="responsedata1"></strong>
             <br><br>
             <button x-on:click="callmethod1">Input User</button>
         </div>
     <div x-data="{
         responsedata: null,
-        async get_NOT() {
+        async getNOT() {
             this.responsedata = await (await fetch('https://api-service-kvandendijck.cloud.okteto.net/getNumberOfTweets')).json();
         } console.log(responsedata)
     }">
         <br><br>
-         <button x-on:click="get_NOT">Get Number Of Tweets</button>
+         <button x-on:click="getNOT">Get Number Of Tweets</button>
            <br><br>
            The number of tweets of your person is: <strong x-text="responsedata"></strong>
 
