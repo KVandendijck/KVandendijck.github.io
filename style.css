@@ -1,0 +1,11 @@
+*{
+    text-align: center;
+    background-color: #F0F8FF;
+}
+
+th,td{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 5px solid black;
+    border-collapse: collapse;
+}
